@@ -19,54 +19,55 @@ try {
 
 
 
-function viewImagesMacro()
+function viewImages($dirPAth)
 {
-    // open this directory 
-    $myDirectory = opendir("images/macro/thumbs/");
+  //  $myDirectory = opendir($dirPAth);
+    $dirArray = [];
+    $cnt = 0;
 
-    // get each entry
-    while ($image = readdir($myDirectory)) {
-        $dirArray[] = $image;
-    }
-
-    //	count elements in array
-    $indexCount = count($dirArray);
-
-    // order
-    natsort($dirArray);
-
-    // loop through the array of files and print them all in a list
-    for ($index = 0; $index < $indexCount; $index++) {
-        $extension = substr($dirArray[$index], -3);
-        if ($extension == 'jpg') { // list only jpgs
-            echo '<img class = "gallery-img" src="images/macro/thumbs/' . $dirArray[$index] . '" alt="Image" />';
+    if ($myDirectory = opendir($dirPAth)) {
+        while (false !== ($image = readdir($myDirectory))) {
+            if ($image != "." && $image != "..") {
+                $dirArray[$cnt] = $image;
+                $cnt++;
+            }
         }
     }
 
-     // close directory
-     closedir($myDirectory);
-}
+    // while (false !== ($image = readdir($myDirectory))) {
 
+    //     $dirArray[$cnt] = $image;
+    //     $cnt++;
+    // }
 
+    //sort($dirArray,SORT_NATURAL);
+     natsort($dirArray);
+    // print_r($dirArray);
 
-function viewImagesLandscape()
-{
-    $myDirectory = opendir("images/landscape/thumbs/");
-
-    while ($image = readdir($myDirectory)) {
-        $dirArray[] = $image;
-    }
 
     $indexCount = count($dirArray);
+    
 
-    natsort($dirArray);
-
-    for ($index = 0; $index < $indexCount; $index++) {
-        $extension = substr($dirArray[$index], -3);
-        if ($extension == 'jpg') { // list only jpgs
-            echo '<img class = "gallery-img" src="images/landscape/thumbs/' . $dirArray[$index] . '" alt="Image" />';
-        }
+    foreach($dirArray as $image) {
+    
+        echo '<img class = "gallery-img" src="' . $dirPAth . $image . '" alt="Image" />';
     }
+
+    print_r($dirArray);
+
+    // for ($index = 0; $index < $indexCount; $index++) {
+    //     $extension = substr($dirArray[$index], -3);
+    //     if ($extension == 'jpg') { // list only jpgs
+    //         echo '<img class = "gallery-img" src="' . $dirPAth . $dirArray[$index] . '" alt="Image" />';
+    //     }
+    // }
+
+    // sort($files,SORT_NATURAL);
+    // natsort($dirArray);
+    // sort($dirArray,SORT_NATURAL)
+
+
+
 
      closedir($myDirectory);
 }

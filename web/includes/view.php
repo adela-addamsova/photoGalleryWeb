@@ -53,7 +53,7 @@ function viewImages($dirPAth)
         echo '<img class = "gallery-img" src="' . $dirPAth . $image . '" alt="Image" />';
     }
 
-    print_r($dirArray);
+    // print_r($dirArray);
 
     // for ($index = 0; $index < $indexCount; $index++) {
     //     $extension = substr($dirArray[$index], -3);

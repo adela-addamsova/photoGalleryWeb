@@ -35,7 +35,7 @@ require_once 'includes/view.php';
 </main> 
     <section id="index-gallery" class="wrapper-template">
     <?php
-        viewImagesLandscape();
+        viewImages("images/landscape/thumbs/");
     ?>
     </section>
     <script src="js/gallery.js"></script> 

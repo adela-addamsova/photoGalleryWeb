@@ -37,7 +37,7 @@ require_once 'includes/view.php';
         </main>
         <section id="index-gallery" class="wrapper-template">
             <?php
-            viewImagesMacro();
+            viewImages("images/macro/thumbs/");
             ?>
 
         <!-- Works with gallery.js

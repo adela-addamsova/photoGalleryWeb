@@ -165,9 +165,7 @@ require_once 'includes/view.php';
                 newImg.setAttribute("src", "http://localhost/photoGalleryWeb/web/images/macro/img" + calcNewImg + ".jpg");
                 newImg.setAttribute("id", "current-img");
 
-                getLatestOpenedImg = calcNewImg;
-
-                
+                getLatestOpenedImg = calcNewImg; 
             }
             
             

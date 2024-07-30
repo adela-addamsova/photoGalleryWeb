@@ -15,6 +15,8 @@ body {
     background-color: white;
 }
 
+
+
 /* Main */
 
 main {
@@ -27,7 +29,6 @@ main {
     background-position: 95% 50%;
     background-position-x: right;
     background-position-y: top;
-    z-index: 1000;
     display: flex;
     flex-direction: column;
     background-repeat:repeat-y;
@@ -88,119 +89,24 @@ main h2 {
 }
 
 
-
-#index-gallery {
-    background-color: white;
-    padding-bottom: 20vh;
-    padding-top: 10vh;
+#gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* x*fraction */
-    grid-template-rows: auto;
-    gap: 5vh;
-  
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 20px;
+    z-index: 1200;
+    padding-bottom: 10vh;
 }
 
-
-/* styling pro všechny obrázky */
-#index-gallery .gallery-img {
-    width: auto;
-    height: 32vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    border-radius: 5px;
-    -webkit-filter: grayscale(100%); 
-   filter: grayscale(0%);
-
-}
-
-/* hover 
-.gallery-img div {
+#gallery img {
     width: 100%;
-    height: 100%;
-    background-color: rgba(206, 239, 208, 0.3);
-    opacity: 0;
+    height: 300px;
+    object-fit: cover;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    cursor: pointer;
 }
-*/
-#index-gallery .gallery-img:hover {
-    opacity: 1;
-    transition: all ease-in-out 100ms;
-    -webkit-filter: grayscale(0%); 
-   filter: grayscale(0%);
-}
-
-/* obrázky */
-#index-gallery h1 {
-    color: black;
-    grid-area: gallery-h1;
-    text-align: center;
-    padding-bottom: 44px;
-}
-
-#index-gallery .img1 {
-    grid-area: img1;
-    background-image: url(../images/macro/thumbs/img1.jpg);
-}
-
-#index-gallery .img2 {
-    grid-area: img2;
-    background-image: url("../images/macro/thumbs/img2.jpg");
-}
-
-#index-gallery .img3 {
-    grid-area: img3;
-    background-image: url("../images/macro/thumbs/img3.jpg");
-}
-
-#index-gallery .img4 {
-    grid-area: img4;
-    background-image: url("../images/macro/thumbs/img4.jpg");
-}
-
-#index-gallery .img5 {
-    grid-area: img5;
-    background-image: url("../images/macro/thumbs/img5.jpg");
-}
-
-#index-gallery .img6 {
-    grid-area: img6;
-    background-image: url("../images/macro/thumbs/img6.jpg");
-}
-
-#index-gallery .img7 {
-    grid-area: img7;
-    background-image: url("../images/macro/thumbs/img7.jpg");
-}
-
-#index-gallery .img8 {
-    grid-area: img8;
-    background-image: url("../images/macro/thumbs/img8.jpg");
-}
-
-#index-gallery .img9 {
-    grid-area: img9;
-    background-image: url("../images/macro/thumbs/img9.jpg");
-}
-
-#index-gallery .img10 {
-    grid-area: img10;
-    background-image: url("../images/macro/thumbs/img10.jpg");
-}
-
-#index-gallery .img11 {
-    grid-area: img11;
-    background-image: url("../images/macro/thumbs/img11.jpg");
-}
-
-#index-gallery .img12 {
-    grid-area: img12;
-    background-image: url("../images/macro/thumbs/img12.jpg");
-}
-
 
 
 
@@ -209,7 +115,7 @@ main h2 {
 .img-window {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 1); 
+    background-color: rgba(0, 0, 0); 
     /* 0,0,0 - code for black, 0.8 - transparency */ 
     position: fixed;
     top: 0;
@@ -218,12 +124,13 @@ main h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2500;
+    z-index: 1100;    
 }
 
 .img-window img {
     max-height: 80vh;
     max-width: 80vw;
+    
 }
 
 /* Next Img Btn */
@@ -233,7 +140,7 @@ main h2 {
     position: fixed;
     top: 48vh;
     right: 5px;
-    z-index: 2600;
+    z-index: 1100;
     cursor: pointer;
 }
 
@@ -248,7 +155,7 @@ main h2 {
     position: fixed;
     top: 48vh;
     left: 5px;
-    z-index: 2600;
+    z-index: 1100;
     cursor: pointer;
 }
 
@@ -264,7 +171,7 @@ main h2 {
     position: fixed;
     top: 8px;
     right: 8px;
-    z-index: 2600;
+    z-index: 1100;
     cursor: pointer;
 }
 

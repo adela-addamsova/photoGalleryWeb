@@ -1,158 +1,105 @@
-let galleryImages = document.querySelectorAll(".gallery-img");
-/* proměnná galleryImages zavolá v dokumentu všechny objekty s třídou gallery-img */
+let galleryImages = document.querySelectorAll("#gallery img");
 let getLatestOpenedImg;
 let windowWidth = window.innerWidth;
 
-
-
-
 if (galleryImages) {
     galleryImages.forEach(function (image, index) {
-        /* foraech metoda - použije se pro všechny obrázky 
-        + index v rámci gallery-img array */
         image.onclick = function () {
-            /* co se stane, když kliknu na obrázek */
-            let getElementCss = window.getComputedStyle(image);
-            /* vezme obrázek */
-            let getFullImgUrl = getElementCss.getPropertyValue("background-image");
-            /* vezme url background image */
-            let getImgUrlPos = getFullImgUrl.split("/images/macro/thumbs/");
-            /* rozdělí url */
+            let getFullImgUrl = image.src;
+            let urlSplit = getFullImgUrl.split("/");
+            let srcUrl = urlSplit[0] + "/" + urlSplit[1] + "/" + urlSplit[2] + "/" + urlSplit[3] + "/" + urlSplit[4] + "/" + urlSplit[5] + "/" + urlSplit[6] + "/" + urlSplit[7] + "/";
+            let getImgUrlPos = getFullImgUrl.split(srcUrl);
+            let fldUrl = urlSplit[6] + "/";
             let setNewImgUrl = getImgUrlPos[1].replace('")', '');
-            /* vymaže z konce url nadbytečné ") */
 
             getLatestOpenedImg = index + 1;
 
+            // create div for popup img
             let container = document.body;
-            /* proměnná, co se vytvoří v body dokumentu - vyskakovací okno */
             let newImgWindow = document.createElement("div");
-            /* vytvoří nový element stránky */
+            // append container to the body
             container.appendChild(newImgWindow);
-            /* div box obsahující obrázek */
+            // set attributes to div
             newImgWindow.setAttribute("class", "img-window");
-            /* přidá elementu class img-window */
-            newImgWindow.setAttribute("onclick", "closeImg()");
-            /* když na okno kliknu, zavře se obrázek */
+            // newImgWindow.setAttribute("onclick", "closeImg()");
 
+            // insert img in the container
             let newImg = document.createElement("img");
-            /* nový img element */
             newImgWindow.appendChild(newImg);
-            /* insert newImg into newImgWindow */
-            newImg.setAttribute("src", "images/macro/" + setNewImgUrl);
-            /* vyrobí url do složky s obrázky v full kvalitě */
+            newImg.setAttribute("src", "http://localhost/photoGalleryWeb/web/images/" + fldUrl + setNewImgUrl);
             newImg.setAttribute("id", "current-img");
 
+            // buttons
+            let newPrevBtn = document.createElement("a");
+            let btnPrevImg = document.createElement("img");
+            btnPrevImg.setAttribute("src", "logo/angle_left.png");
+            newPrevBtn.appendChild(btnPrevImg);
+            container.appendChild(newPrevBtn);
+            newPrevBtn.setAttribute("class", "img-btn-prev");
+            newPrevBtn.setAttribute("onclick", "changeImg(0)");
 
-            newImg.onload = function () {
-                /* create function for buttons that appear within the popup */
-                let imgWidth = this.width;
-                /*getting the width of loaded img */
-                let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 60;
-                /* calc of width for buttons */
+            let newNextBtn = document.createElement("a");
+            let btnNextImg = document.createElement("img");
+            btnNextImg.setAttribute("src", "logo/angle_right.png");
+            newNextBtn.appendChild(btnNextImg);
+            container.appendChild(newNextBtn);
+            newNextBtn.setAttribute("class", "img-btn-next");
+            newNextBtn.setAttribute("onclick", "changeImg(1)");
 
-                let newNextBtn = document.createElement("a");
-                /* create previous/next button */
-                let btnNextImg = document.createElement("img");
-                /* create text for the button - CHANGE TO IMG */
-                btnNextImg.setAttribute("src", "logo/angle_right.png");
-                newNextBtn.appendChild(btnNextImg);
-                /* append text to the btn */
-                container.appendChild(newNextBtn);
-                /* insert btn to the document */
-                newNextBtn.setAttribute("class", "img-btn-next");
-                /* create class for btn */
-                newNextBtn.setAttribute("onclick", "changeImg(1)");
-                /* create onclick event with function */
-                /*  newNextBtn.style.cssText = "right: " + (calcImgToEdge) + "px;"; */
-                /* calc of left spacing for the btn */
-
-                let newPrevBtn = document.createElement("a");
-                let btnPrevImg = document.createElement("img");
-                btnPrevImg.setAttribute("src", "logo/angle_left.png");
-                newPrevBtn.appendChild(btnPrevImg);
-                container.appendChild(newPrevBtn);
-                newPrevBtn.setAttribute("class", "img-btn-prev");
-                newPrevBtn.setAttribute("onclick", "changeImg(0)");
-                /* newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px;"; */
+            let newCloseBtn = document.createElement("a");
+            let btnCloseImg = document.createElement("img");
+            btnCloseImg.setAttribute("src", "logo/x-mark.png");
+            newCloseBtn.appendChild(btnCloseImg);
+            container.appendChild(newCloseBtn);
+            newCloseBtn.setAttribute("class", "img-btn-close");
+            newCloseBtn.setAttribute("onclick", "closeImg()");
 
 
-                /* all this code within the function to load a img first and get the 
-                width for btn spacing */
-
-                let newCloseBtn = document.createElement("a");
-                let btnCloseImg = document.createElement("img");
-                btnCloseImg.setAttribute("src", "logo/x-mark.png");
-                newCloseBtn.appendChild(btnCloseImg);
-                container.appendChild(newCloseBtn);
-                newCloseBtn.setAttribute("class", "img-btn-close");
-                newCloseBtn.setAttribute("onclick", "closeImg()");
-            }
         }
     });
 }
 
-
-
-
-
 function closeImg() {
-
     document.querySelector(".img-window").remove();
-    /* click on class img-window and remove it */
     document.querySelector(".img-btn-next").remove();
     document.querySelector(".img-btn-prev").remove();
     document.querySelector(".img-btn-close").remove();
-    /* remove btns too */
 
 }
 
 function changeImg(changeDir) {
-    /* change direction - next to 1, prev to 0 */
-    document.querySelector("#current-img").remove();
-    /* remove current img before showing another */
+    // get current img url
+    let getFullImgUrl = document.querySelector("#current-img").src;
+    let urlSplit = getFullImgUrl.split("/");
+    let srcUrl = urlSplit[0] + "/" + urlSplit[1] + "/" + urlSplit[2] + "/" + urlSplit[3] + "/" + urlSplit[4] + "/" + urlSplit[5] + "/" + urlSplit[6] + "/";
 
+    // remove current img
+    document.querySelector("#current-img").remove();
+    // get container
     let getImgWindow = document.querySelector(".img-window");
+    // get new img
     let newImg = document.createElement("img");
     getImgWindow.appendChild(newImg);
-    /* create new img element in the window */
 
     let calcNewImg;
     if (changeDir === 1) {
-        /* if change direction = 1 = next img */
         calcNewImg = getLatestOpenedImg + 1;
-        /* open next img */
         if (calcNewImg > galleryImages.length) {
-            calcNewImg = 1
-            /* if next image is the last one start over again */
+            calcNewImg = 1;
         }
     }
     else if (changeDir === 0) {
-        /* if change direction = 0 = prev img */
         calcNewImg = getLatestOpenedImg - 1;
-        /* open prev img */
         if (calcNewImg < 1) {
             calcNewImg = galleryImages.length;
-            /* if prev image is the first one open up the last img in lenght */
         }
     }
 
-    newImg.setAttribute("src", "images/macro/img" + calcNewImg + ".jpg");
+
+    newImg.setAttribute("src", srcUrl + "img" + calcNewImg + ".jpg");
     newImg.setAttribute("id", "current-img");
-    /* set src and id of new img */
 
     getLatestOpenedImg = calcNewImg;
-
-    newImg.onload = function () {
-        let imgWidth = this.width;
-        let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 60;
-
-        let nextBtn = document.querySelector(".img-btn-next");
-        /* nextBtn.style.cssText = "right: " + (calcImgToEdge) + "px;"; */
-
-        let prevBtn = document.querySelector(".img-btn-prev");
-        /*  prevBtn.style.cssText = "left: " + calcImgToEdge + "px;"; */
-    }
-    /* styling again the butn for img with another width */
 }
 
 
@@ -161,8 +108,8 @@ window.addEventListener("keydown", function (event) {
     if (event.key === "ArrowRight") {
         // Next image
         changeImg(1);
-    } 
-    
+    }
+
     else if (event.key === "ArrowLeft") {
 
         changeImg(0);

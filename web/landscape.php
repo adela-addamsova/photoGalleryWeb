@@ -13,7 +13,7 @@ require_once 'includes/view.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/landscape.css">
+    <link rel="stylesheet" href="css/page.css">
     <script type="module" src="js/main.js"></script>
 </head>
 
@@ -22,26 +22,29 @@ require_once 'includes/view.php';
 <h-eader></h-eader>
 
 <body>
+
+    <h-eader></h-eader>
+
     <main>
         <h2>Landscape</h2>
 
         <div class="title">
             <p>Lorem ipsum dolor sit amet, <br>
                 consectetuer adipiscing elit. <br>
-                 Etiam commodo dui eget wisi. <br>
-                 In enim a arcu imperdiet malesuada. <br>
-                  Nulla turpis magna, cursus sit amet.
-                </div>
-</main> 
-    <section id="index-gallery" class="wrapper-template">
-    <?php
-        viewImages("images/landscape/thumbs/");
-    ?>
+                Etiam commodo dui eget wisi. <br>
+                In enim a arcu imperdiet malesuada. <br>
+                Nulla turpis magna, cursus sit amet.
+        </div>
+    </main>
+    <section id="gallery" class="wrapper-template">
+        <?php
+        viewImages("../images/landscape/thumbs/");
+        ?>
+        <script src="js/gallery.js"></script>
     </section>
-    <script src="js/gallery.js"></script> 
 
     <f-ooter></f-ooter>
- 
+
 </body>
 
 

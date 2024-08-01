@@ -8,20 +8,10 @@
 
 
     @font-face {
-        font-family: Hadnwriting;
-        src: url(../font/SCRIPTIN.ttf);
-         
-        font-family: Lora;
-        src: url(../font/static/Lora-Medium.ttf);
-
-        font-family: Roboto;
-        src: url(../font/Roboto-Light.ttf);
-
+   
         font-family: Mons;
         src: url(../font/Montserrat-Light.ttf);
 
-        
-         
     }
     
     
@@ -76,7 +66,6 @@
         font-size: 2.2rem;
         line-height: 1.5;
         color: rgb(0, 0, 0);
-        font-family: Lora;
     }
     
     h3 {
@@ -116,7 +105,7 @@
     display: flex;
     justify-content: space-between;
     z-index: 1000; 
-    border-bottom: solid 1px rgb(167, 167, 167);
+  /*  border-bottom: solid 1px rgb(167, 167, 167); */
 }
 
 /* Logo */

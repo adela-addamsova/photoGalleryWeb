@@ -33,7 +33,7 @@ class MyHeader extends HTMLElement {
     <nav class="header-main-nav">
         <ul>
             <li><a href="index.php">HOME</a></li>
-            <li><a href="index.php#category">GALLERY</a>
+            <li><a href="index.php#gallery">GALLERY</a>
                 <ul>
                     <li><a href="landscape.php">Landscape</a></li>
                     <li><a href="macro.php">Macro</a></li>

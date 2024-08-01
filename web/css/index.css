@@ -1,78 +1,131 @@
-@font-face {
-    font-family: Handwriting;
-    src: url(../font/SCRIPTIN.ttf);
-
-    font-family: Mons;
-        src: url(../font/Montserrat-Light.ttf);
-
-    font-family: Monsit;
-        src: url(../font/Montserrat-ExtraLightItalic.ttf);
-    
-    
- 
-}
-
-
 
 /* Main */
 
 main {
     width: 100%;
     height: fit-content;
-    padding-top: 6rem;
-    background-image:
-        linear-gradient(rgba(239, 243, 240, 0.8),
-            rgba(255, 255, 255, 1)), url(../images/back_leave.JPG);
-    background-size: 70%;
+    /* margin-top: 8vh; */
+  /*  background-image:
+        linear-gradient(rgba(239, 243, 240, 0.3),
+            rgba(255, 255, 255, 0)), url(../images/EM4A7121.JPG); */
+  /*  background-image: url(../images/EM4A7121.JPG); */
+    background-size: 50%;
     background-repeat: no-repeat;
-    background-position: 100% 70%;
-    background-position-x: left;
+    background-position: 70% 100%;
+    background-position-x: right;
     background-position-y: top;
     justify-content: center;
     align-items: center;
     z-index: 2;
-    padding-bottom: 10vh;
+  /*  padding-bottom: 10vh; */
 }
 
 
 .main-intro {
     display: flex;
-    justify-content: left;
-    width: 100%;
-    height: 70vh;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
     align-items: center;
+    background-image: url(../images/landscape/img1.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-position-x: right;
+    background-position-y: top;
+    justify-content: center;
+    align-items: center;
+ 
 }
 
 
 .main-intro h1 {
-    font-size: 18vh;
+    font-size: 14vh;
     line-height: 1;
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: Monsit;
     text-transform: none;
     font-weight: 25px;
     /* backdrop-filter: blur(5px); */
-    margin-left: 15vw;
+    position: top;
+    font-family: mons;
+    border: #fff 2px solid;
+    border-radius: 7px;
+    padding: 5vh;
+    background-color:rgba(0, 0, 0, 0.2);
+}
+
+.around {
+    width: 100vw;
+    height: fit-content;
+    border-top: #000000 1px solid;
+    padding: 10vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* Gallery menu */
+#gallery {
+    width: 90vw;
+    height: fit-content;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    border: #000000 1px solid;
+    padding: 10vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 1)),url(../images/pexels-hngstrm-1939485.jpg);
+
+}
+
+.menu-box {
+    width: 80vw;
+    height: 20vh;
+    border: #000000 1px solid;
+    margin: 10px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: white;
+}
+
+.menu-box img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all ease-in-out 100ms;
+}
+
+
+.menu-box h2 {
+    font-size: 7vh;
+    padding: 13vh;
+}
+
+.menu-box img {
+    width: 50vW;
+    height: 20vh;
+    object-fit:cover;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
 }
 
 
 /* Category */
 
-#category {
+/* #category {
     width: 90%;
     height: fit-content;
     position: relative;
     display: flex;
-    /* vztahuje se pouze na prvky v daném kontejneru,
-    už na ty, které obsahují */
-    /* flex-direction: row; = default */
     justify-content: space-evenly;
-    /* gap: 50px 50px; row gap column gap */
     flex-wrap: wrap;
     align-items: center;
     row-gap: 5vh;
-  /*  background: inherit;
-    box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.5); */
     border-radius: 10px;
     margin: 5vw 0 0 5vw; 
 }
@@ -108,7 +161,7 @@ main {
 .category-box {
     width: 30%;
     height: 40vh;
-    background-color: var(--site-color-01);
+    background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -117,7 +170,6 @@ main {
     align-items: center;
     position: relative;
     border: #000000 1px solid;
-    border-radius: 6px;
     display: flex;
 }
 
@@ -152,7 +204,7 @@ main {
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(206, 239, 208, 0.15);
+    background-color: rgba(0, 0, 0, 0.75);
     opacity: 1;
     transition: all ease-in-out 300ms;
     justify-content: center;
@@ -172,7 +224,7 @@ main {
     z-index: 10;
     align-self: center;
     font-family: Mons;
-}
+} */
 
 
 
@@ -180,13 +232,15 @@ main {
 
 .slider-box {
     background: inherit;
-    height: 55vh;
+    height: fit-content;
     margin: 0;
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-bottom: 15vh;
+    padding-top: 8vh;
 }
 
 .slider {
@@ -204,7 +258,7 @@ main {
 .item {
     position: absolute;
     width: 35vw;
-    height: 35vh;
+    height: 40vh;
     background-color: #fff;
     border-radius: 10px;
     transition: 0.5s;
@@ -220,28 +274,28 @@ main {
 }
 
 .item:nth-child(2) {
-    background-image: url(../images/gallery/thumbs/img8.jpg);
+    background-image: url(../images/gallery/thumbs/img6.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .item:nth-child(3) {
-    background-image: url(../images/gallery/thumbs/img1.jpg);
+    background-image: url(../images/gallery/thumbs/img10.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .item:nth-child(4) {
-    background-image: url(../images/gallery/thumbs/img11.jpg);
+    background-image: url(../images/gallery/thumbs/img19.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .item:nth-child(5) {
-    background-image: url(../images/gallery/thumbs/img20.jpg);
+    background-image: url(../images/gallery/thumbs/img21.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -253,9 +307,8 @@ main {
     color: #000000;
     background-color: transparent;
     border: none;
-    font-size: 8vh;
+    font-size: 10vh;
     left: 50px;
-    font-family: Mons;
     top: 20vh;
     z-index: 101;
     cursor: pointer;
@@ -277,18 +330,13 @@ main {
 #latest {
     width: 90%;
     display: flex;
-    position: relative;
-    text-transform: none;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 2vh;
-    font-size: 14vh;
-    font-family: Monsit;
+    text-align: left;
+    margin-top: 5vh;
+    font-size: 8vh;
     border-bottom: #000000 solid 2px;
-    padding-bottom: 14vh;
+    padding-bottom: 5vh;
+    padding-left: 5vw;
 }
-
 
 
 /* Mobile version */

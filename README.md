@@ -1,4 +1,5 @@
 # photoGalleryWeb
 
 Web page to show my photography.
-Currently implementing more php and js code to make it less static.
+Last progress was implementing PHP code instead of static HTML.
+Next step is to connect SQL database.

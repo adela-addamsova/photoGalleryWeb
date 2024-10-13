@@ -1,0 +1,98 @@
+/* Main headline */
+.intro {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.comment {
+    margin-top: 30rem;
+    line-height: 30px;
+    border: solid 1px white;
+    border-radius: 10px;
+    padding: 3rem;
+    background: rgba(0, 0, 0, 0.8);  
+}
+
+.comment p {
+    font-size: 18px;
+}
+
+
+/* gallery grid */
+.img-gallery {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 20px;
+    padding: 15rem 0;
+}
+
+.img-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+
+/* popup window */
+.img-window {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 29, 29, 1);
+    position: fixed;
+    bottom: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;    
+}
+
+#current-img {
+    max-height: 80vh;
+    max-width: 80vw;
+}
+
+/* Icons */
+.img-btn-next, .img-btn-prev, .img-btn-close {
+    width: 6vh;
+    position: fixed;
+    top: 48vh;
+    z-index: 500;
+    cursor: pointer;
+}
+
+.img-btn-prev {
+    left: 1vw;
+}
+
+.img-btn-next {
+    right: 1vw;
+}
+
+.img-btn-close {
+    width: 4vh;
+    height: 5vh;
+    right: 1.3vw;
+    top: 2vh;
+}
+
+.img-btn-prev:hover, .img-btn-close:hover, .img-btn-next:hover  {
+    opacity: 0.7;
+    transition: all ease-in-out 100ms;
+}
+
+
+
+

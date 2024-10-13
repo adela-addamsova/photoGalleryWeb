@@ -1,0 +1,98 @@
+/* main headline */
+.main-intro {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* gallery nav */
+#gallery {
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 12vh 0;
+}
+
+.menu-box {
+    width: 40vw;
+    height: 20vh;
+    border: #000000 1px solid;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: white;
+    overflow: hidden;
+}
+
+.menu-box img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+}
+
+
+.menu-box h3 {
+    font-size: 35px;
+    line-height: 20vh;
+    width: 50%;
+}
+
+.menu-box img {
+    width: 50%;
+    height: 20vh;
+    object-fit:cover;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
+}
+
+
+
+
+/* Slider */
+.latest {
+    width: 90%;
+    padding-bottom: 2vh;
+    border-bottom: #000000 solid 2px;
+}
+
+.latest-slider {
+    position: relative;
+    display: flex;
+    width: 95vw;
+    height: 45vh;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    overflow: hidden;
+}
+
+
+.item {
+    position: absolute;
+    width: 50rem;
+    height: 27rem;
+    background-color: #fff;
+    border: #ababab 1px solid;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.latest-slider img {
+    height: 5rem;
+    position: absolute;
+}
+
+.latest-slider img:hover {
+    opacity: 0.5;
+}
